@@ -1,6 +1,8 @@
 ---
-title: "Lynsey Keator Assignment #7"
-output: html_notebook
+title: 'Lynsey Keator Assignment #7'
+output:
+  html_document:
+    df_print: paged
 ---
 
 ####Question 1
@@ -38,7 +40,7 @@ lm.regressresiduals(x, y, 5)
 ####Question 2
 ###Obtain a real data set with quantitative response and explanatory variables (n>=50). Plot these on a scatterplot with a regression line. Use your function to help you highlight the 10% largest residuals on the scatterplot.
 
-```{r}
+```{r echo=FALSE}
 library(here)
 hsb2 <- read.csv(here("Data", "hsb2.csv"))
 
@@ -55,7 +57,10 @@ cor <- cor(hsb2$read, hsb2$math)
 
 residuals <- lm(hsb2$read ~ hsb2$math)
 residuals
+```
 
+
+```{r echo=FALSE}
 #Scatterplot with regression line of the linear regression model. Highlighting 10% largest residuals.
 
 plot(hsb2$read, hsb2$math,
